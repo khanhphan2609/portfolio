@@ -194,32 +194,34 @@ async function buildFooter() {
 
 // ─── VIEW COUNT ─────────────────────────────────────────────
 async function initViewCounter() {
-  const workspace = "khanhphan-portfolio-views";
-  const name = "khanhphan-portfolio-views";
-  const apiKey = "ut_iil1ToQQzomOx9NwCOM7XfqZJMIptR2bpuZfFSlc";
+  // Hãy đảm bảo namespace và name khớp 100% với Dashboard của bạn
+  const namespace = "khanhphan-portfolio-views"; 
+  const name = "views"; // Hoặc cái tên bạn đã đặt trong Dashboard
   const el = document.getElementById("view-count");
 
   if (!el) return;
   el.innerText = "Loading...";
 
-  // KHAI BÁO BIẾN HEADERS Ở ĐÂY
-  const headers = { 
-    "Authorization": `Bearer ${apiKey}` 
-  };
+  // Thử thêm dấu / ở cuối URL, đôi khi nó giúp tránh redirect làm mất header CORS
+  let url = `https://api.counterapi.dev/v1/${namespace}/${name}/`;
 
   try {
-    let url = `https://api.counterapi.dev/v2/${workspace}/${name}`;
-    
-    url += "/up";
+    if (!localStorage.getItem("has_viewed")) {
+      url += "up";
+      localStorage.setItem("has_viewed", "true");
+    }
 
-    const res = await fetch(url, { headers }); // Bây giờ headers đã hợp lệ
+    const res = await fetch(url, {
+      method: 'GET',
+      mode: 'cors', // Ép buộc chế độ cors
+    });
     
-    if (!res.ok) throw new Error("API Response Error");
+    if (!res.ok) throw new Error(`Server returned ${res.status}`);
 
     const data = await res.json();
     animateCounter(el, data.count);
   } catch (err) {
-    console.error("View Counter Error:", err);
+    console.error("View Counter V1 Error:", err);
     el.innerText = "N/A";
   }
 }
