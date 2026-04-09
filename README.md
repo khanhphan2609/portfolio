@@ -58,9 +58,7 @@ Open locally:
 Open index.html directly or use Live Server (VSCode)
 
 ## 📬 Contact
-- Email: your-email@example.com  
-- LinkedIn: (add link)  
-- GitHub: (add link)  
+- Email: pvkhanh2609@gmail.com
 
 ## 📄 License
 MIT License
