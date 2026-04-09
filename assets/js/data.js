@@ -210,10 +210,7 @@ async function initViewCounter() {
   try {
     let url = `https://api.counterapi.dev/v2/${workspace}/${name}`;
     
-    if (!localStorage.getItem("viewed")) {
-      url += "/up";
-      localStorage.setItem("viewed", "true");
-    }
+    url += "/up";
 
     const res = await fetch(url, { headers }); // Bây giờ headers đã hợp lệ
     
