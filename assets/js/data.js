@@ -187,22 +187,49 @@ async function buildFooter() {
 }
 
 // ─── VIEW COUNT ─────────────────────────────────────────────
-const el = document.getElementById("view-count");
-let current = 0;
+function initViewCounter() {
+  const namespace = "khanhphan-portfolio";
+  const key = "views";
 
-fetch("https://api.countapi.xyz/hit/khanhphan-portfolio/views")
-  .then(res => res.json())
-  .then(res => {
-    const target = res.value;
-    const interval = setInterval(() => {
-      current += Math.ceil(target / 50);
-      if (current >= target) {
-        current = target;
-        clearInterval(interval);
-      }
-      el.innerText = current;
-    }, 20);
-  });
+  const el = document.getElementById("view-count");
+  if (!el) return;
+
+  // Nếu chưa từng vào → tăng view
+  if (!localStorage.getItem("viewed")) {
+    fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+      .then(res => res.json())
+      .then(res => {
+        animateCounter(el, res.value);
+      });
+
+    localStorage.setItem("viewed", "true");
+  } 
+  // Nếu đã vào → chỉ lấy số
+  else {
+    fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
+      .then(res => res.json())
+      .then(res => {
+        animateCounter(el, res.value);
+      });
+  }
+}
+
+function animateCounter(el, target) {
+  let current = 0;
+
+  const step = Math.ceil(target / 50);
+
+  const interval = setInterval(() => {
+    current += step;
+
+    if (current >= target) {
+      current = target;
+      clearInterval(interval);
+    }
+
+    el.innerText = current.toLocaleString();
+  }, 20);
+}
 
 // ─── INIT ────────────────────────────────────────────────────
 async function init() {
@@ -215,6 +242,7 @@ async function init() {
     buildContact(),
     buildFooter(),
   ]);
+  initViewCounter();
 }
 
 document.addEventListener("DOMContentLoaded", init);
