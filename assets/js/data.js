@@ -181,9 +181,28 @@ async function buildFooter() {
                 <ul class="list">
                     ${links}
                     <p class="copyright">${data.copyright}</p>
+                    <p>👀 Views: <span id="view-count">0</span></p>
                 </ul>
             `;
 }
+
+// ─── VIEW COUNT ─────────────────────────────────────────────
+const el = document.getElementById("view-count");
+let current = 0;
+
+fetch("https://api.countapi.xyz/hit/khanhphan-portfolio/views")
+  .then(res => res.json())
+  .then(res => {
+    const target = res.value;
+    const interval = setInterval(() => {
+      current += Math.ceil(target / 50);
+      if (current >= target) {
+        current = target;
+        clearInterval(interval);
+      }
+      el.innerText = current;
+    }, 20);
+  });
 
 // ─── INIT ────────────────────────────────────────────────────
 async function init() {
