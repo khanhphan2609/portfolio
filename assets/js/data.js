@@ -32,14 +32,18 @@ async function buildNav() {
   initMenu();
 }
 
+// ─── NAV ────────────────────────────────────────────────────
 function initMenu() {
   const menuIcon = document.getElementById("menu-icon");
   const navbar = document.querySelector(".navbar");
 
-  menuIcon.onclick = () => {
-    menuIcon.classList.toggle("bx-x");
-    navbar.classList.toggle("active");
-  };
+  // Kiểm tra tồn tại trước khi gán để tránh lỗi null
+  if (menuIcon && navbar) {
+    menuIcon.onclick = () => {
+      menuIcon.classList.toggle("bx-x");
+      navbar.classList.toggle("active");
+    };
+  }
 }
 
 // ─── HOME ───────────────────────────────────────────────────
@@ -195,21 +199,30 @@ async function initViewCounter() {
   const apiKey = "ut_iil1ToQQzomOx9NwCOM7XfqZJMIptR2bpuZfFSlc";
   const el = document.getElementById("view-count");
 
-  const headers = { "Authorization": `Bearer ${apiKey}` };
+  if (!el) return;
+  el.innerText = "Loading...";
+
+  // KHAI BÁO BIẾN HEADERS Ở ĐÂY
+  const headers = { 
+    "Authorization": `Bearer ${apiKey}` 
+  };
 
   try {
     let url = `https://api.counterapi.dev/v2/${workspace}/${name}`;
     
-    // Nếu chưa viewed, gọi thêm /up
     if (!localStorage.getItem("viewed")) {
       url += "/up";
       localStorage.setItem("viewed", "true");
     }
 
-    const res = await fetch(url, { headers });
+    const res = await fetch(url, { headers }); // Bây giờ headers đã hợp lệ
+    
+    if (!res.ok) throw new Error("API Response Error");
+
     const data = await res.json();
     animateCounter(el, data.count);
   } catch (err) {
+    console.error("View Counter Error:", err);
     el.innerText = "N/A";
   }
 }
