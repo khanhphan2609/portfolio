@@ -184,6 +184,8 @@ async function buildFooter() {
                     <p>👀 Views: <span id="view-count">0</span></p>
                 </ul>
             `;
+
+  initViewCounter();
 }
 
 // ─── VIEW COUNT ─────────────────────────────────────────────
@@ -217,7 +219,7 @@ function initViewCounter() {
 function animateCounter(el, target) {
   let current = 0;
 
-  const step = Math.ceil(target / 50);
+  const step = Math.max(1, Math.ceil(target / 50));
 
   const interval = setInterval(() => {
     current += step;
@@ -242,7 +244,6 @@ async function init() {
     buildContact(),
     buildFooter(),
   ]);
-  initViewCounter();
 }
 
 document.addEventListener("DOMContentLoaded", init);
