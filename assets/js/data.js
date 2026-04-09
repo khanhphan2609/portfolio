@@ -189,34 +189,28 @@ async function buildFooter() {
 }
 
 // ─── VIEW COUNT ─────────────────────────────────────────────
-function initViewCounter() {
-  const namespace = "khanhphan-portfolio";
-  const key = "views";
-
+async function initViewCounter() {
+  const workspace = "khanhphan-portfolio-views";
+  const name = "khanhphan-portfolio-views";
+  const apiKey = "ut_iil1ToQQzomOx9NwCOM7XfqZJMIptR2bpuZfFSlc";
   const el = document.getElementById("view-count");
-  if (!el) return;
-  el.innerText = "Loading...";
 
-  // Thay đổi URL sang api.api-count.com hoặc dịch vụ tương đương
-  const baseUrl = `https://api.api-count.com/hit/${namespace}/${key}`;
-  const getUrl = `https://api.api-count.com/get/${namespace}/${key}`;
+  const headers = { "Authorization": `Bearer ${apiKey}` };
 
-  if (!localStorage.getItem("viewed")) {
-    fetch(baseUrl)
-      .then(res => res.json())
-      .then(res => {
-        animateCounter(el, res.value || res.count); // Tùy API trả về field nào
-      })
-      .catch(() => el.innerText = "N/A"); // Phòng hờ lỗi
+  try {
+    let url = `https://api.counterapi.dev/v2/${workspace}/${name}`;
+    
+    // Nếu chưa viewed, gọi thêm /up
+    if (!localStorage.getItem("viewed")) {
+      url += "/up";
+      localStorage.setItem("viewed", "true");
+    }
 
-    localStorage.setItem("viewed", "true");
-  } else {
-    fetch(getUrl)
-      .then(res => res.json())
-      .then(res => {
-        animateCounter(el, res.value || res.count);
-      })
-      .catch(() => el.innerText = "N/A");
+    const res = await fetch(url, { headers });
+    const data = await res.json();
+    animateCounter(el, data.count);
+  } catch (err) {
+    el.innerText = "N/A";
   }
 }
 
