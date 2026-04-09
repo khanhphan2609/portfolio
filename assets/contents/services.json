@@ -1,0 +1,29 @@
+{
+  "sectionTitle": "Services",
+  "items": [
+    {
+      "title": "AI Projects",
+      "description": "I collaborate on AI-driven projects including predictive modeling, computer vision, and intelligent systems. Open to research, product development, and real-world applications."
+    },
+    {
+      "title": "Software & Web Development",
+      "description": "Available for building scalable web applications, backend systems, and full-stack solutions with a focus on performance, clean architecture, and user experience."
+    },
+    {
+      "title": "Robotics & Embedded Systems",
+      "description": "Interested in developing robotics systems, humanoid applications, and embedded solutions combining hardware and AI technologies."
+    },
+    {
+      "title": "Startup & Business",
+      "description": "Open to collaborating with startups and businesses on innovative projects, product development, and technology strategy to drive growth and success."
+    },
+    {
+      "title": "Technical Consulting",
+      "description": "Providing consulting on system architecture, AI integration, and technology strategy to help businesses build efficient and scalable solutions."
+    },
+    {
+      "title": "Education & Mentorship",
+      "description": "Passionate about sharing knowledge through mentoring, workshops, and training in programming, AI, and software development."
+    }
+  ]
+}

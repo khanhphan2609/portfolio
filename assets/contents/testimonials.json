@@ -1,0 +1,47 @@
+{
+  "sectionTitle": "References",
+  "items": [
+    {
+      "name": "MetaTap Company",
+      "image": "/assets/imgs/metatap.png",
+      "stars": 6,
+      "href": "#testimonials",
+      "description": "MetaTap is a game publishing and PR & marketing agency, specializing in co-publishing and KOL/KOC campaigns. I gained one year of hands-on experience in game programming and operations, contributing to product development and live game management."
+    },
+    {
+      "name": "National ROBOG 2024 Competition",
+      "image": "/assets/imgs/ROBOG.png",
+      "href": "https://kiemtruong.vn/tin-tuyen-sinh/6996/784/1/Sinh-vien-HUFLIT-am-4-giai-thuong-tai-cuoc-thi-Sang-tao-ROBOT---ROBOG-2024.html",  
+      "stars": 6,
+      "description": "Secured 3rd place in the National ROBOG 2024 Competition – the first AI humanoid robot arena in Vietnam. This achievement demonstrates strong capabilities in artificial intelligence, robotics engineering, and competitive problem-solving."
+    },
+    {
+      "name": "Robot at Nguyen Hue Tet Festival 2025",
+      "image": "/assets/imgs/robot-nguyen-hue.avif",
+      "stars": 6,
+      "href": "https://laodong.vn/du-lich/kham-pha/robot-bong-ai-chuc-tet-bang-20-ngon-ngu-o-duong-hoa-tphcm-1455669.html",
+      "description": "Collaborated with a team to design and develop a humanoid robot showcased at Nguyen Hue Tet Festival 2025 in Ho Chi Minh City. The project attracted significant public interest and was featured across multiple media outlets."
+    },
+    {
+      "name": "TFY Company",
+      "image": "/assets/imgs/TFY.jpg",
+      "stars": 6,
+      "href": "https://tfy.vn",
+      "description": "TFY is a technology and education company focused on building innovative, real-world solutions. I contributed to multiple projects and currently serve as Director, leading business strategy and technology development to deliver data-driven products."
+    },
+    {
+      "name": "LINKWORK Company",
+      "image": "/assets/imgs/LINKWORK.png",
+      "stars": 6,
+      "href": "https://masothue.com/1702342704-cong-ty-tnhh-truyen-thong-dao-tao-linkwork",
+      "description": "LINKWORK is a company specializing in media, education, and career development, connecting individuals with learning resources and employment opportunities. I am responsible for system design and development, contributing to scalable, technology-driven solutions that empower learners and job seekers."
+    },
+    {
+      "name": "HUFLIT University",
+      "image": "/assets/imgs/huflit.jpg",
+      "href": "https://www.facebook.com/watch/?v=584361487304773",
+      "stars": 6,
+      "description": "HUFLIT University is a leading institution in Ho Chi Minh City, Vietnam. I am currently pursuing a Bachelor's degree in Computer Science, where I have built a strong foundation in programming, software engineering, and data science, while achieving multiple academic awards."
+    }
+  ]
+}

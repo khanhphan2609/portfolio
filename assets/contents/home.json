@@ -1,0 +1,18 @@
+{
+  "greeting": "Hi, It's",
+  "name": "Khanh",
+  "roles": ["CEO and CTO of TFY Company", "Business Analyst" ,"AI Engineer", "Full Stack Developer"],
+  "bio": "I bridge business and technology to build scalable, impactful digital solutions — from AI systems to full-stack products. Let’s build something great together!",
+  "image": "/assets/imgs/2.jpg",
+  "socialLinks": [
+    { "platform": "linkedin", "icon": "bxl-linkedin", "url": "https://www.linkedin.com/in/phan-kh%C3%A1nh-78a638194/" },
+    { "platform": "github", "icon": "bxl-github", "url": "https://github.com/khanhphan2609" },
+    { "platform": "facebook", "icon": "bxl-facebook", "url": "https://www.facebook.com/profile.php?id=100035784953470&mibextid=LQQJ4d" },
+    { "platform": "instagram", "icon": "bxl-instagram", "url": "https://www.instagram.com/_kady06/" },
+    { "platform": "tiktok", "icon": "bxl-tiktok", "url": "https://www.tiktok.com/@khanhphan06_" }
+  ],
+  "buttons": [
+    { "label": "Explore Me", "href": "#education" },
+    { "label": "Contact", "href": "#contact" }
+  ]
+}

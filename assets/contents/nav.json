@@ -1,0 +1,14 @@
+{
+  "logo": {
+    "text": "Khanh",
+    "span": "Phan",
+    "href": "#home"
+  },
+  "links": [
+    { "label": "Home", "href": "#home-section" },
+    { "label": "Career", "href": "#career" },
+    { "label": "Services", "href": "#services" },
+    { "label": "Testimonials", "href": "#testimonials" },
+    { "label": "Contact", "href": "#contact" }
+  ]
+}

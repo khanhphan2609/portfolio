@@ -1,0 +1,17 @@
+{
+  "socialLinks": [
+    { "platform": "linkedin", "icon": "bxl-linkedin", "url": "https://www.linkedin.com/in/phan-kh%C3%A1nh-78a638194/" },
+    { "platform": "github", "icon": "bxl-github", "url": "https://github.com/khanhphan2609" },
+    { "platform": "facebook", "icon": "bxl-facebook", "url": "https://www.facebook.com/profile.php?id=100035784953470&mibextid=LQQJ4d" },
+    { "platform": "instagram", "icon": "bxl-instagram", "url": "https://www.instagram.com/_kady06/" },
+    { "platform": "tiktok", "icon": "bxl-tiktok", "url": "https://www.tiktok.com/@khanhphan06_" }
+  ],
+  "links": [
+    { "label": "About Me", "href": "#home-section" },
+    { "label": "Career", "href": "#career" },
+    { "label": "Services", "href": "#services" },
+    { "label": "Testimonials", "href": "#testimonials" },
+    { "label": "Contact", "href": "#contact" }
+  ],
+  "copyright": "© 2026 by Khanh Phan | All Rights Reserved"
+}

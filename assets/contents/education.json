@@ -1,0 +1,25 @@
+{
+  "sectionTitle": "Career",
+  "items": [
+    {
+      "year": "2023",
+      "title": "Game Operations at MetaTap Corporation",
+      "description": "Built foundational experience in game systems, user engagement, and operational workflows."
+    },
+    {
+      "year": "2024",
+      "title": "Freelancer & Educator",
+      "description": "Delivered freelance projects and taught programming, strengthening both technical and communication skills."
+    },
+    {
+      "year": "2025",
+      "title": "Full Stack Developer",
+      "description": "Developed end-to-end applications with a focus on scalability, performance, and user experience."
+    },
+    {
+      "year": "2026",
+      "title": "Director at TFY Company",
+      "description": "Leading business strategy and technology development to build innovative, data-driven solutions."
+    }
+  ]
+}
