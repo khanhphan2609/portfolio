@@ -28,6 +28,18 @@ async function buildNav() {
 
   // Re-attach active class to first nav link
   document.querySelector(".navbar a").classList.add("active");
+
+  initMenu();
+}
+
+function initMenu() {
+  const menuIcon = document.getElementById("menu-icon");
+  const navbar = document.querySelector(".navbar");
+
+  menuIcon.onclick = () => {
+    menuIcon.classList.toggle("bx-x");
+    navbar.classList.toggle("active");
+  };
 }
 
 // ─── HOME ───────────────────────────────────────────────────
