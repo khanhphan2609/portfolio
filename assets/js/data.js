@@ -197,23 +197,26 @@ function initViewCounter() {
   if (!el) return;
   el.innerText = "Loading...";
 
-  // Nếu chưa từng vào → tăng view
+  // Thay đổi URL sang api.api-count.com hoặc dịch vụ tương đương
+  const baseUrl = `https://api.api-count.com/hit/${namespace}/${key}`;
+  const getUrl = `https://api.api-count.com/get/${namespace}/${key}`;
+
   if (!localStorage.getItem("viewed")) {
-    fetch(`https://api.countapi.xyz/hit/${namespace}/${key}`)
+    fetch(baseUrl)
       .then(res => res.json())
       .then(res => {
-        animateCounter(el, res.value);
-      });
+        animateCounter(el, res.value || res.count); // Tùy API trả về field nào
+      })
+      .catch(() => el.innerText = "N/A"); // Phòng hờ lỗi
 
     localStorage.setItem("viewed", "true");
-  } 
-  // Nếu đã vào → chỉ lấy số
-  else {
-    fetch(`https://api.countapi.xyz/get/${namespace}/${key}`)
+  } else {
+    fetch(getUrl)
       .then(res => res.json())
       .then(res => {
-        animateCounter(el, res.value);
-      });
+        animateCounter(el, res.value || res.count);
+      })
+      .catch(() => el.innerText = "N/A");
   }
 }
 
