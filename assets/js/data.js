@@ -181,7 +181,7 @@ async function buildFooter() {
                 <ul class="list">
                     ${links}
                     <p class="copyright">${data.copyright}</p>
-                    <p>👀 Views: <span id="view-count">0</span></p>
+                    <p>👀 Views: <span id="view-count"></span></p>
                 </ul>
             `;
 
@@ -195,6 +195,7 @@ function initViewCounter() {
 
   const el = document.getElementById("view-count");
   if (!el) return;
+  el.innerText = "Loading...";
 
   // Nếu chưa từng vào → tăng view
   if (!localStorage.getItem("viewed")) {
